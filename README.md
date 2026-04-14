@@ -4,17 +4,24 @@
 [![Version](https://img.shields.io/badge/version-1.0-blue.svg)](https://github.com/mightytonylun/heritage-condition-report-copilot/releases)
 [![Browser Support](https://img.shields.io/badge/browser-all%20modern-brightgreen.svg)](#browser-support)
 
-> A web-based companion tool for heritage property inspectors to systematically document conditions, defects, and maintenance costs while working alongside formal reports.
+> Desktop webapp that works alongside Microsoft Word for heritage property assessments. v1.0: Desktop copilot for structured documentation and Word export. v1.1+: Mobile field capture with camera integration.
 
 ## Overview
 
-Heritage Condition Report Copilot streamlines heritage property assessments by providing inspectors with a structured, field-friendly data entry system. Capture conditions, defects, and costs in grouped categories, attach photo evidence, and export findings directly to Word documents—all offline, in-browser, with zero setup required.
+Heritage Condition Report Copilot v1.0 is a **desktop companion tool** that runs in your browser alongside Word documents. Inspectors structure their assessment findings, attach photos, group defects by element, and export formatted tables directly to Word reports—no setup required, all data stored locally.
+
+**v1.0 Workflow:**
+```
+📋 Browser form open → Document findings → Export to Word → Finalize report
+```
 
 **Perfect for:**
-- Heritage conservationists conducting property surveys
-- Structural engineers documenting building conditions
-- Insurance assessors preparing condition reports
-- Maintenance planners prioritizing repairs
+- Heritage conservationists documenting property conditions
+- Structural engineers preparing condition reports
+- Insurance assessors creating assessment documents
+- Maintenance planners estimating repair costs
+
+**v1.1+ will add:** Direct tablet camera capture for on-site photo documentation.
 
 ## Table of Contents
 
@@ -24,6 +31,7 @@ Heritage Condition Report Copilot streamlines heritage property assessments by p
 - [Data Structure](#data-structure)
 - [Browser Support](#browser-support)
 - [Troubleshooting](#troubleshooting)
+- [Roadmap](#roadmap)
 - [License](#license)
 
 ## Features
@@ -31,11 +39,11 @@ Heritage Condition Report Copilot streamlines heritage property assessments by p
 ### Core Functionality
 - **Structured Assessment Sections** — Electrical, plumbing, structural, hazard identification, and more
 - **Grouped Entry System** — Organize findings by reference numbers + room/element categories
-- **Photo Documentation** — Attach images directly to entries; stored locally in browser
+- **Photo Support** — Attach images directly to entries; stored locally in browser
 - **Cost Estimation** — Calculate subtotals by defect group for budget planning
-- **Word Export** — Generate formatted tables ready for condition reports
-- **Offline-First** — All data persists in-browser; no internet or server required
-- **Responsive Design** — Works seamlessly on desktop, tablet, and mobile devices
+- **Word Export** — Copy formatted tables directly into condition report documents
+- **Offline-First** — All data persists in-browser; works without internet
+- **Desktop-Optimized** — Built for work alongside Word (responsive design for future mobile capture)
 
 ### User Experience
 - **Zero Setup** — Open HTML file, start using immediately
@@ -58,25 +66,29 @@ cd heritage-condition-report-copilot
 # Open heritage-property-assessment.html in your browser
 ```
 
-### First Use
+### First Use (Desktop)
 
-1. **Open** `heritage-property-assessment.html` in any modern browser
-2. **Review** sample data (property, inspector details, assessment examples)
-3. **Modify** entries inline in the preview tables
-4. **Add** new property details using form sections
-5. **Export** to Word when ready for formal reports
+1. **Open** `heritage-property-assessment.html` in desktop browser
+2. **Open Word document** in parallel for your condition report
+3. **Review** sample data to understand structure (then clear for your property)
+4. **Document** findings in form sections
+5. **Export to Word** using copy buttons to transfer data to your report
 
-### Field Workflow Example
+### v1.0 Desktop Workflow Example
 
 ```
-Tablet on-site       → Browser form open, capturing photos + notes
+Browser + Word open  → Document conditions and findings in form
 ↓
-Back at office       → Review entries in grouped preview tables
+Structured entry     → Organize defects by element/room with ref numbers
 ↓
-Reporting            → Export to Word, format final condition report
+Export to Word       → Copy grouped tables into condition report
 ↓
-Archive              → Save Word document alongside property files
+Final report         → Format and finalize for submission/archive
 ```
+
+### Future: v1.1 Field Workflow (Mobile Camera)
+
+Coming in v1.1: Capture photos directly on tablets on-site using device camera, then sync with desktop for reporting.
 
 ## How It Works
 
@@ -138,17 +150,21 @@ Photos:      [roof-east-01.jpg, roof-east-02.jpg]
 
 ## Browser Support
 
-| Browser | Desktop | Tablet | Mobile |
-|---------|---------|--------|--------|
-| **Chrome** | ✓ | ✓ | ✓ |
-| **Firefox** | ✓ | ✓ | ✓ |
-| **Safari** | ✓ | ✓ | ✓ |
-| **Edge** | ✓ | ✓ | ✓ |
+**v1.0 (Desktop-Optimized)**
+
+| Browser | Support |
+|---------|---------|
+| **Chrome** | ✓ Full support |
+| **Firefox** | ✓ Full support |
+| **Safari** | ✓ Full support |
+| **Edge** | ✓ Full support |
+
+v1.0 is optimized for desktop and laptop use. Mobile/tablet support improves in v1.1 with camera integration.
 
 **Requirements:**
 - Modern JavaScript support (ES6+)
 - localStorage enabled
-- File upload capability (for photos)
+- File upload capability
 
 ## Troubleshooting
 
@@ -188,23 +204,47 @@ Photos:      [roof-east-01.jpg, roof-east-02.jpg]
 
 ## Tips for Best Results
 
-### Field Work (Tablet/Mobile)
-- Open form on tablet during inspection
-- Capture photos directly as you assess areas
-- Type ref numbers and element names following your system
-- Internet not required; data syncs when needed
+### Desktop Workflow (v1.0)
+- **Dual monitor setup**: One screen for form, one for Word document
+- **Copy-paste workflow**: Use export buttons to move data to Word seamlessly
+- **Sample data**: Review examples, then clear and document your property
+- **Photo uploads**: Pre-collect photos before entering in form, or upload as you document
 
-### Office Work (Desktop)
-- Review grouped entries in preview tables
-- Edit entries inline before export
-- Use export buttons for Word integration
-- Archive Word reports for compliance
-
-### Data Organization
+### Best Practices
 - Develop consistent ref number scheme (e.g., `RM-##` for rooms, `D-##` for defects)
 - Use element names matching building terminology
 - Include timestamps in notes for dated assessments
-- Keep photo file names descriptive
+- Organize photos with descriptive file names before upload
+
+### Future: Mobile Field Work (v1.1+)
+- Planned: Direct camera capture on tablets for on-site documentation
+- Planned: Sync photos with desktop for reporting
+
+## Roadmap
+
+### v1.0 (Current)
+- ✅ Desktop webapp copilot for Word
+- ✅ Structured assessment sections
+- ✅ Grouped defect entry system
+- ✅ Photo attachment and preview
+- ✅ Cost estimation and export
+- ✅ Offline data persistence
+
+### v1.1 (Planned)
+- 📱 Direct camera capture on tablets
+- 📱 Mobile-optimized photo workflow
+- 🔄 Data sync between devices
+- 📊 Enhanced photo gallery
+- 🏷️ Photo tagging and organization
+
+### Future Considerations
+- PWA installation (app icon on home screen)
+- Collaborative editing/sharing
+- Cloud backup option
+- Template customization
+- Advanced reporting features
+
+[View Full Roadmap](https://github.com/mightytonylun/heritage-condition-report-copilot/discussions)
 
 ## License
 
