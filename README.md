@@ -1,6 +1,6 @@
 # Heritage Condition Report Copilot
 
-[![License: Proprietary](https://img.shields.io/badge/License-Proprietary-red.svg)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Version](https://img.shields.io/badge/version-1.0-blue.svg)](https://github.com/mightytonylun/heritage-condition-report-copilot/releases)
 [![Browser Support](https://img.shields.io/badge/browser-all%20modern-brightgreen.svg)](#browser-support)
 
@@ -246,23 +246,30 @@ v1.0 is optimized for desktop and laptop use. Mobile/tablet support improves in 
 
 [View Full Roadmap](https://github.com/mightytonylun/heritage-condition-report-copilot/discussions)
 
+## Citation
+
+If you use this project in research, publications, or derivative works, please cite it:
+
+```
+Heritage Condition Report Copilot
+https://github.com/mightytonylun/heritage-condition-report-copilot
+```
+
+This helps recognize the original research contribution.
+
 ## License
 
-**Proprietary License** — All rights reserved.
+MIT License — See [LICENSE](LICENSE) file for full details.
 
-This tool is proprietary research and is protected by copyright. See [LICENSE](LICENSE) file for full details.
+You are free to:
+- ✓ Use commercially
+- ✓ Modify and create derivative works  
+- ✓ Distribute and fork
+- ✓ Use privately
 
-**You may:**
-- ✓ View the source code
-- ✓ Use for evaluation and feedback
-- ✓ Suggest improvements
-
-**You may not:**
-- ✗ Copy, fork, or redistribute
-- ✗ Modify or create derivative works
-- ✗ Use for commercial purposes without permission
-
-**Collaboration:** For licensing inquiries or collaboration opportunities, please open an issue on the repository.
+You must:
+- Include the original license and copyright notice
+- **Recommended:** Cite this project if used in research/publications
 
 ## Contributing
 

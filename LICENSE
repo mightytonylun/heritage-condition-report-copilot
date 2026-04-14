@@ -1,39 +1,33 @@
-# Proprietary License
+MIT License
 
-All rights reserved.
+Copyright (c) 2026 Heritage Condition Report Copilot Contributors
 
-## Terms of Use
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-This software (Heritage Condition Report Copilot) is proprietary and confidential.
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-### You MAY:
-- View the source code
-- Use the tool for evaluation purposes
-- Provide feedback and suggestions
-- Use the tool personally or within your organization
-
-### You MAY NOT:
-- Copy, fork, or duplicate this code
-- Modify or create derivative works
-- Redistribute or share the code with others
-- Reverse engineer or attempt to extract the code
-- Use this for commercial purposes without permission
-
-## Research Protection
-
-This tool is part of ongoing research and development. It is protected under this proprietary license to preserve the author's intellectual property rights while allowing for community evaluation and feedback.
-
-## Collaboration & Licensing
-
-For collaboration opportunities, licensing inquiries, or to discuss permissions:
-- Please open an issue on the repository
-- Or contact the repository owner directly
-
-## Disclaimer
-
-This software is provided "as-is" without warranty of any kind, express or implied. The author is not liable for any damages arising from the use or inability to use this software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
 ---
 
-**Version**: 1.0  
-**Last Updated**: 2026-04
+## Attribution for Research Use
+
+If you use this project in research, publications, or academic work, 
+please cite the original project:
+
+Heritage Condition Report Copilot
+https://github.com/mightytonylun/heritage-condition-report-copilot
+
+This helps recognize the original research contribution and is greatly appreciated.
