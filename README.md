@@ -1,113 +1,231 @@
 # Heritage Condition Report Copilot
 
-A web-based companion tool for heritage property inspectors to document conditions, defects, and maintenance costs while working alongside Word documents.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Version](https://img.shields.io/badge/version-1.0-blue.svg)](https://github.com/mightytonylun/heritage-condition-report-copilot/releases)
+[![Browser Support](https://img.shields.io/badge/browser-all%20modern-brightgreen.svg)](#browser-support)
+
+> A web-based companion tool for heritage property inspectors to systematically document conditions, defects, and maintenance costs while working alongside formal reports.
+
+## Overview
+
+Heritage Condition Report Copilot streamlines heritage property assessments by providing inspectors with a structured, field-friendly data entry system. Capture conditions, defects, and costs in grouped categories, attach photo evidence, and export findings directly to Word documents—all offline, in-browser, with zero setup required.
+
+**Perfect for:**
+- Heritage conservationists conducting property surveys
+- Structural engineers documenting building conditions
+- Insurance assessors preparing condition reports
+- Maintenance planners prioritizing repairs
+
+## Table of Contents
+
+- [Features](#features)
+- [Quick Start](#quick-start)
+- [How It Works](#how-it-works)
+- [Data Structure](#data-structure)
+- [Browser Support](#browser-support)
+- [Troubleshooting](#troubleshooting)
+- [License](#license)
 
 ## Features
 
-- **Field-Friendly Data Entry**: Capture property conditions, structural assessments, and hazard identification in an intuitive form
-- **Photo Documentation**: Attach and manage photos for each entry (stored locally in browser)
-- **Grouped Entry System**: Organize defects and property elements by:
-  - Reference numbers (e.g., RM-01, R-01, D-01)
-  - Room/element/location grouping
-  - Priority levels and suggested repairs
-- **Cost Tracking**: Calculate subtotals by defect group for budget estimation
-- **Word Export**: Export findings directly to Word documents for formal reports
-- **Offline-Ready**: Data persists in browser localStorage (works without internet)
-- **Mobile-Friendly**: Responsive design works on tablets and desktop
+### Core Functionality
+- **Structured Assessment Sections** — Electrical, plumbing, structural, hazard identification, and more
+- **Grouped Entry System** — Organize findings by reference numbers + room/element categories
+- **Photo Documentation** — Attach images directly to entries; stored locally in browser
+- **Cost Estimation** — Calculate subtotals by defect group for budget planning
+- **Word Export** — Generate formatted tables ready for condition reports
+- **Offline-First** — All data persists in-browser; no internet or server required
+- **Responsive Design** — Works seamlessly on desktop, tablet, and mobile devices
+
+### User Experience
+- **Zero Setup** — Open HTML file, start using immediately
+- **Auto-Save** — Data persists as you type (browser localStorage)
+- **Sample Data** — Pre-populated examples demonstrate structure and workflow
+- **Inline Editing** — Modify entries directly in preview tables
+- **Clear/Reset** — Easily clear all data to start fresh
+
+## Quick Start
+
+### Opening the Tool
+
+```bash
+# Option 1: Direct download
+# Download heritage-property-assessment.html and open in your browser
+
+# Option 2: Clone repository
+git clone https://github.com/mightytonylun/heritage-condition-report-copilot.git
+cd heritage-condition-report-copilot
+# Open heritage-property-assessment.html in your browser
+```
+
+### First Use
+
+1. **Open** `heritage-property-assessment.html` in any modern browser
+2. **Review** sample data (property, inspector details, assessment examples)
+3. **Modify** entries inline in the preview tables
+4. **Add** new property details using form sections
+5. **Export** to Word when ready for formal reports
+
+### Field Workflow Example
+
+```
+Tablet on-site       → Browser form open, capturing photos + notes
+↓
+Back at office       → Review entries in grouped preview tables
+↓
+Reporting            → Export to Word, format final condition report
+↓
+Archive              → Save Word document alongside property files
+```
 
 ## How It Works
 
-### 1. Open & Load Sample Data
-Open `heritage-property-assessment.html` in any modern browser. Sample data loads automatically so you can see how it works.
+### Assessment Sections
 
-### 2. Fill Out Property Basics
-- Property address, inspection date, inspector name
-- Electrical, plumbing, structural, and hazard assessments
+The form is organized into 10 logical sections:
 
-### 3. Add Grouped Entries
-For **Exterior Elements**, **Interior Spaces**, and **Defects**:
-- Enter a **Reference Number** (e.g., RM-01, EE-01, D-02)
-- Specify the **Room/Element** it belongs to (e.g., Kitchen, Roof, Window)
-- Add description, priority, and suggested work
-- Attach photos directly from the form
+| Section | Purpose | Grouped? |
+|---------|---------|----------|
+| **1. Property Details** | Address, date, inspector | No |
+| **2. Electrical** | RCD presence, condition notes | No |
+| **3. Plumbing** | Leaks, pressure, condition | No |
+| **4. Moisture/Ventilation** | Dampness, condensation, hazards | No |
+| **5. Hazardous Materials** | Asbestos, lead, other | No |
+| **6. Structural** | Foundation, walls, movement | No |
+| **7. Exterior Elements** | Roof, elevations, etc. | ✓ By location |
+| **8. Interior Spaces** | Rooms, finishes, condition | ✓ By room |
+| **9. Defects** | Issues, priority, repairs | ✓ By element |
+| **10. Overall Summary** | Final assessment notes | No |
 
-### 4. Review in Preview Tables
-View grouped entries organized by room/element, with ref numbers linked to photos.
+### Grouped Entry System (Sections 7, 8, 9)
 
-### 5. Export to Word
-Click **Copy to Word** to export findings formatted for your condition report document.
+For Exterior, Interior, and Defects sections, structure entries with:
 
-## Sample Data
+- **Reference Number** — Unique identifier (e.g., `RM-01`, `R-01`, `D-02`)
+- **Room/Element/Location** — Grouping category (e.g., `Kitchen`, `Roof`, `Window`)
+- **Description** — Detailed notes
+- **Priority** — (Defects only) `Urgent`, `Important`, `Routine`
+- **Suggested Work** — (Defects only) Recommended repairs
+- **Photos** — Attachable evidence images
 
-The form includes sample data demonstrating:
-- Interior spaces (Kitchen, Living Room)
-- Exterior elements (Roof, East Elevation)
-- Defects with priorities (Urgent, Important, Routine)
-- Photo attachments and grouped organization
+**Example entry:**
+```
+Ref Number:  D-01
+Element:     Roof
+Notes:       Missing tiles on east side, exposed underlayment
+Priority:    Urgent
+Repair:      Replace tiles, inspect flashing
+Photos:      [roof-east-01.jpg, roof-east-02.jpg]
+```
 
-Clear it anytime and start fresh with your own property data.
+### Data Storage
 
-## Data Storage
+```
+┌─────────────────────────┐
+│   Browser LocalStorage  │
+├─────────────────────────┤
+│ • assessmentForm        │  (Sections 1-10)
+│ • complexData           │  (Grouped entries 7-9)
+│ • assessmentPhotos      │  (Photo data)
+└─────────────────────────┘
+```
 
-- **Browser-Based**: All data saved to your browser's localStorage
-- **Private**: Data stays on your device (not sent to any server)
-- **Persistent**: Data survives browser refresh (until you clear it)
-- **Export**: Copy data to Word documents for reports
+**Privacy & Security:**
+- All data stored locally on your device
+- No cloud upload or external server
+- Private until you choose to export
+- Persists across browser sessions
 
 ## Browser Support
 
-Works on any modern browser (Chrome, Firefox, Safari, Edge) on:
-- Desktop computers
-- Tablets (iPad, Android tablets)
-- Mobile phones (in-browser use)
+| Browser | Desktop | Tablet | Mobile |
+|---------|---------|--------|--------|
+| **Chrome** | ✓ | ✓ | ✓ |
+| **Firefox** | ✓ | ✓ | ✓ |
+| **Safari** | ✓ | ✓ | ✓ |
+| **Edge** | ✓ | ✓ | ✓ |
 
-## Getting Started
-
-1. **Download**: Get `heritage-property-assessment.html`
-2. **Open**: Double-click to open in your default browser, or right-click → "Open with" → choose your browser
-3. **Use**: Start filling in property details
-4. **Export**: Use the "Copy to Word" buttons to generate reports
-
-## Tips for Field Use
-
-- Use on a tablet alongside your inspection checklist
-- Photos sync locally as you type
-- Internet not required (works offline)
-- Data saves automatically as you type
-- Export to Word later for final reports
-
-## Workflow Example
-
-1. **Field**: Tablet with form open, capturing photos and entering defect notes
-2. **Back at Office**: Open laptop, review entries in the preview tables
-3. **Reporting**: Export to Word, format final condition report
-4. **Documentation**: Archive Word reports alongside property files
+**Requirements:**
+- Modern JavaScript support (ES6+)
+- localStorage enabled
+- File upload capability (for photos)
 
 ## Troubleshooting
 
-**Photos not showing?**
+### Photos not displaying in tables
+
+**Symptom:** Broken image icons in preview tables  
+**Solutions:**
+- Refresh browser (F5 or Cmd+R)
 - Check browser console (F12) for errors
 - Ensure browser allows file uploads
-- Try refreshing the page
+- Try a different browser
 
-**Data disappeared?**
-- Check browser privacy settings aren't blocking localStorage
-- Try different browser if problems persist
+### Data disappeared after refresh
+
+**Symptom:** Form is empty after closing/reopening  
+**Solutions:**
+- Check browser privacy settings (may block localStorage)
+- Verify browser isn't in private/incognito mode
+- Try a standard browsing window
 - Keep backups of exported Word documents
 
-**Export not working?**
-- Ensure you have Microsoft Word or compatible software
-- Try copying text to new Word document manually
-- Check browser console for JavaScript errors
+### Export to Word not working
+
+**Symptom:** Copy buttons don't transfer data to Word  
+**Solutions:**
+- Ensure Microsoft Word or compatible software is installed
+- Try copying text manually to a new Word document
+- Check browser console (F12) for JavaScript errors
+- Use browser's developer tools to verify data exists
+
+### Browser console shows storage warnings
+
+**Symptom:** "Tracking Prevention blocked access to storage"  
+**Solution:**
+- Adjust browser privacy settings to allow storage for this site
+- Or use a standard browsing window (not private/incognito mode)
+
+## Tips for Best Results
+
+### Field Work (Tablet/Mobile)
+- Open form on tablet during inspection
+- Capture photos directly as you assess areas
+- Type ref numbers and element names following your system
+- Internet not required; data syncs when needed
+
+### Office Work (Desktop)
+- Review grouped entries in preview tables
+- Edit entries inline before export
+- Use export buttons for Word integration
+- Archive Word reports for compliance
+
+### Data Organization
+- Develop consistent ref number scheme (e.g., `RM-##` for rooms, `D-##` for defects)
+- Use element names matching building terminology
+- Include timestamps in notes for dated assessments
+- Keep photo file names descriptive
 
 ## License
 
-This tool is provided as-is for heritage property assessments and condition reporting.
+MIT License — See LICENSE file for details
 
-## Questions or Feedback?
+**You are free to:**
+- ✓ Use commercially
+- ✓ Modify and distribute
+- ✓ Use privately
 
-Document issues, suggest features, or share improvements on the project repository.
+**You must:**
+- Include license and copyright notice
+
+## Contributing
+
+Found a bug? Have a feature suggestion? Issues and pull requests welcome!
+
+[Report an Issue](https://github.com/mightytonylun/heritage-condition-report-copilot/issues) · [Suggest a Feature](https://github.com/mightytonylun/heritage-condition-report-copilot/issues)
 
 ---
 
-**Version**: 1.0 | **Updated**: 2026-04 | **Format**: Single HTML file (no installation needed)
+**Made for heritage property professionals** who need practical, offline-first assessment tools.
+
+[⬆ Back to top](#heritage-condition-report-copilot)
